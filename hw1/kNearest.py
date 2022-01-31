@@ -22,11 +22,14 @@ zVals = np.concatenate([[1]*200, [0]*200])
 
 #Test using 1 data point from each quadrant
 prediction1 = expectedVal(25.0,25.0,5, xVals, yVals, zVals)
-print('Expected %d, Got %d.' % (0, prediction1))
+print('For data point: "25,25".  Expected %d, Got %d.' % (0, prediction1))
 prediction2 = expectedVal(-25.0,-25.0,5, xVals, yVals, zVals)
-print('Expected %d, Got %d.' % (0, prediction2))
+print('For data point: "-25,-25".  Expected %d, Got %d.' % (0, prediction2))
 prediction3 = expectedVal(-25.0,25.0,5, xVals, yVals, zVals)
-print('Expected %d, Got %d.' % (1, prediction3))
+print('For data point: "-25,25".  Expected %d, Got %d.' % (1, prediction3))
 prediction4 = expectedVal(25.0,-25.0,5, xVals, yVals, zVals)
-print('Expected %d, Got %d.' % (1, prediction4))
+print('For data point: "25,-25".  Expected %d, Got %d.' % (1, prediction4))
+prediction5 = expectedVal(25.0,0,5, xVals, yVals, zVals)
+print('For data point: "25,0".  Expected value can vary, Got %d.' % prediction5)
+
 
