@@ -15,10 +15,12 @@ def expectedVal(x, y, k, xVals, yVals, zVals):
     res = max(set(out), key=out.count)
     return res
 
+#Add 100 random data points in each of the 4 quadrants
 xVals = np.concatenate([np.random.uniform(0, 100, 100), np.random.uniform(-100, 0, 100), np.random.uniform(0, 100, 100), np.random.uniform(-100, 0, 100)])
 yVals = np.concatenate([np.random.uniform(-100, 0, 100), np.random.uniform(0, 100, 100), np.random.uniform(0, 100, 100), np.random.uniform(-100, 0, 100)])
 zVals = np.concatenate([[1]*200, [0]*200])
 
+#Test using 1 data point from each quadrant
 prediction1 = expectedVal(25.0,25.0,5, xVals, yVals, zVals)
 print('Expected %d, Got %d.' % (0, prediction1))
 prediction2 = expectedVal(-25.0,-25.0,5, xVals, yVals, zVals)
